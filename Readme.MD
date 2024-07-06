@@ -1,5 +1,7 @@
 # Supply Chain Management System(SCM App)
 
+The objective of this assignment is to evaluate the candidate's proficiency in developing a RESTful API using FastAPI. The candidate should demonstrate their ability to design, develop, test, and document a web API, handle complex API functionalities, manage intricate database interactions, and implement security features.
+
 1. Create Virtualenv
 
 goto command prompt and run below commands
@@ -65,15 +67,15 @@ http://127.0.0.1:8000/docs
 `
 
 
-#Assignment: Developing a RESTful API for a Supply Chain Management System using FastAPI
+# Assignment: Developing a RESTful API for a Supply Chain Management System using FastAPI
 `
-Objective:
+##Objective:
 The objective of this assignment is to evaluate the candidate's proficiency in developing a RESTful API using FastAPI. The candidate should demonstrate their ability to design, develop, test, and document a web API, handle complex API functionalities, manage intricate database interactions, and implement security features.
  
-Project Description:
+## Project Description:
 You are required to create a RESTful API for a supply chain management system. The system should allow users to manage products, suppliers, customers, orders, and shipments. The API should support CRUD operations for each of these entities and include additional functionalities such as inventory tracking, order fulfillment, and generating supply chain reports.
  
-Requirements:
+## Requirements:
 Setup and Configuration:
  
 Use FastAPI to create the API.
@@ -146,7 +148,7 @@ DELETE /orders/{order_id}: Delete an order by ID
 PATCH /orders/{order_id}/status: Update the status of an order
 GET /orders/{order_id}/items: List all items in an order
  
-Database Models:
+### Database Models:
  
 Create SQLAlchemy models for Product, Supplier, Customer, Order, OrderItem, and Shipment.
 Ensure proper relationships and constraints are set up in the database schema.
@@ -170,9 +172,9 @@ Include tests for authentication and authorization.
 Include tests for data validation and error handling.
 Documentation:
  
-Use Swagger UI provided by FastAPI for API documentation.
+## Use Swagger UI provided by FastAPI for API documentation.
 Include clear and concise documentation for each endpoint, including request and response examples.
-Submission:
+## Submission:
  
 Provide a GitHub repository link with the complete codebase.
 Include a README file with setup instructions, how to run the application, and how to run the tests.
