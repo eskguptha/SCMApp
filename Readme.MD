@@ -180,3 +180,9 @@ Provide a GitHub repository link with the complete codebase.
 Include a README file with setup instructions, how to run the application, and how to run the tests.
 
 `
+
+# Testing
+run below command to run test cases
+`
+pytest
+`
