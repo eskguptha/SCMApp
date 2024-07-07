@@ -37,10 +37,10 @@ async def list_suppliers(session: AsyncSession = Depends(get_session)):
         response_data = ResponseModel(status= "NotOK", data= {"error" :  str(e)}, message="Something went wrong")
     return JSONResponse(status_code=status_code, content=response_data.dict())
 
-@app.get("/suppliers/{id}", tags=["get Supplier details"], response_model=ResponseModel)
-async def get_supplier(id:int,session: AsyncSession = Depends(get_session)):
+@app.get("/suppliers/{supplier_id}", tags=["get Supplier details"], response_model=ResponseModel)
+async def get_supplier(supplier_id:int,session: AsyncSession = Depends(get_session)):
     try:
-        statement = select(Supplier).where(Supplier.id == id)
+        statement = select(Supplier).where(Supplier.id == supplier_id)
         result = (await session.exec(statement)).first()
         if result:
             response_data = ResponseModel(status= "OK", data={"result" : result.json()}, message="1 Record found")
@@ -73,8 +73,8 @@ async def create_supplier(SupplierCreateUpdate: SupplierCreateUpdate, session: A
         response_data = ResponseModel(status= "NotOK", data= {"error" :  str(e)}, message="Something went wrong")
     return JSONResponse(status_code=status_code, content=response_data.dict())
 
-@app.put("/suppliers/{id}", tags=["Update supplier details"])
-async def update_supplier(id: int, supplierUpdate: SupplierCreateUpdate, session: AsyncSession = Depends(get_session)):
+@app.put("/suppliers/{supplier_id}", tags=["Update supplier details"])
+async def update_supplier(supplier_id: int, supplierUpdate: SupplierCreateUpdate, session: AsyncSession = Depends(get_session)):
     try:
         queryset_result = await session.get(Supplier, id)
         if queryset_result:
@@ -105,10 +105,10 @@ async def list_products(session: AsyncSession = Depends(get_session)):
         response_data = ResponseModel(status= "NotOK", data= {"error" :  str(e)}, message="Something went wrong")
     return JSONResponse(status_code=status_code, content=response_data.dict())
 
-@app.get("/products/{suplier_id}", tags=["get Product details"], response_model=ResponseModel)
-async def get_product(id:int,session: AsyncSession = Depends(get_session)):
+@app.get("/products/{product_id}", tags=["get Product details"], response_model=ResponseModel)
+async def get_product(product_id:int,session: AsyncSession = Depends(get_session)):
     try:
-        statement = select({Product}).where(Product.id == id)
+        statement = select({Product}).where(Product.id == product_id)
         result = (await session.exec(statement)).first()
         if result:
             response_data = ResponseModel(status= "OK", data={"result" : result.json()}, message="1 Record found")
