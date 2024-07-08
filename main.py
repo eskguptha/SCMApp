@@ -21,7 +21,7 @@ class ResponseModel(BaseModel):
     data: Dict = {}
     message: str = None
 
-@app.get("/ping,", tags=["health Check"])
+@app.get("/ping", tags=["health Check"])
 async def pong():
     return {"ping": "pong!"}
 
@@ -410,5 +410,5 @@ async def delete_Order(orders_id:int,session: AsyncSession = Depends(get_session
     return JSONResponse(status_code=status_code, content=response_data.dict())
 
 
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

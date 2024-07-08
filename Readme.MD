@@ -66,6 +66,14 @@ uvicorn app:main --reload
 http://127.0.0.1:8000/docs
 `
 
+12. Testing
+
+run below command to run test cases
+
+`
+pytest
+`
+
 
 # Assignment: Developing a RESTful API for a Supply Chain Management System using FastAPI
 `
@@ -179,10 +187,4 @@ Include clear and concise documentation for each endpoint, including request and
 Provide a GitHub repository link with the complete codebase.
 Include a README file with setup instructions, how to run the application, and how to run the tests.
 
-`
-
-# Testing
-run below command to run test cases
-`
-pytest
 `
